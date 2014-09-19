@@ -17,8 +17,7 @@ calcRoute = (currentLat, currentLong, locations) ->
 
   while i < locations.length
     unknowitem = locations[i]
-    item = if typeof unknowitem is 'string' then unknowitem else ("#{unknowitem.latitude}, #{unknowitem.longitude}")
-    console.log item
+    item = (if typeof unknowitem is 'string' then unknowitem else ("#{unknowitem.latitude}, #{unknowitem.longitude}"))
     waypts.push
       location: item
       stopover: true

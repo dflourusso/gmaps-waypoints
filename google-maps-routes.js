@@ -23,8 +23,7 @@ calcRoute = function(currentLat, currentLong, locations) {
   i = 0;
   while (i < locations.length) {
     unknowitem = locations[i];
-    item = typeof unknowitem === 'string' ? unknowitem : "" + unknowitem.latitude + ", " + unknowitem.longitude;
-    console.log(item);
+    item = (typeof unknowitem === 'string' ? unknowitem : "" + unknowitem.latitude + ", " + unknowitem.longitude);
     waypts.push({
       location: item,
       stopover: true
