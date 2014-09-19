@@ -12,37 +12,21 @@
 <div id="map-canvas" style="float:left;width:70%;height:100%;"></div>
 <div id="control_panel" style="float:right;width:30%;text-align:left;padding-top:20px">
     <div style="margin:20px;border-width:2px;">
-        <b>Start:</b>
-        <select id="start">
-            <option value="Halifax, NS">Halifax, NS</option>
-            <option value="Boston, MA">Boston, MA</option>
-            <option value="New York, NY">New York, NY</option>
-            <option value="Miami, FL">Miami, FL</option>
-        </select>
-        <br>
         <b>Waypoints:</b> <br>
         <i>(Ctrl-Click for multiple selection)</i> <br>
-        <select multiple id="waypoints">
-            <option value="montreal, quebec">Montreal, QBC</option>
-            <option value="toronto, ont">Toronto, ONT</option>
-            <option value="chicago, il">Chicago</option>
-            <option value="winnipeg, mb">Winnipeg</option>
-            <option value="fargo, nd">Fargo</option>
-            <option value="calgary, ab">Calgary</option>
-            <option value="spokane, wa">Spokane</option>
+        <select multiple id="waypoints" style="height: 200px;">
+            <option value="R. João Batista Fabro">R. João Batista Fabro</option>
+            <option value="Rua Rodrigo Maibon Moreira">Rua Rodrigo Maibon Moreira</option>
+            <option value="Rua Itamar Orlando Soares">Rua Itamar Orlando Soares</option>
+            <option value="Avenida São Paulo, Maringá">Avenida São Paulo</option>
+            <option value="Avenida Colombo, Maringá">Avenida Colombo</option>
+            <option value="Avenida Prudente de Morais, Maringá">Avenida Prudente de Morais</option>
+            <option value="Avenida Cerro Azul, Maringá">Avenida Cerro Azul</option>
+            <option value="Avenida Mandacarú, 1723">Avenida Mandacarú</option>
         </select>
         <br>
-        <b>End:</b>
-        <select id="end">
-            <option value="Vancouver, BC">Vancouver, BC</option>
-            <option value="Seattle, WA">Seattle, WA</option>
-            <option value="San Francisco, CA">San Francisco, CA</option>
-            <option value="Los Angeles, CA">Los Angeles, CA</option>
-        </select>
-        <br>
-        <input type="submit" onclick="calcRoute();">
+        <input type="submit" onclick="calcRoute(-23.426868, -51.9408231);">
     </div>
-    <div id="directions_panel" style="margin:20px;background-color:#FFEE77;"></div>
 </div>
 
 <script src="google-map.js"></script>
