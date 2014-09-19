@@ -4,7 +4,7 @@
     <title>Google Maps</title>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="google-map.css">
+    <link rel="stylesheet" href="google-maps-routes.css">
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 </head>
 <body>
@@ -29,6 +29,6 @@
     </div>
 </div>
 
-<script src="google-map.js"></script>
+<script src="google-maps-routes.js"></script>
 </body>
 </html>
