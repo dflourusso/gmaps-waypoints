@@ -1,22 +1,29 @@
 {
-    "name": "gmaps-waypoints",
-    "version": "0.1.0",
-    "license": "public",
-    "homepage": "http://www.paliari.com.br/",
-    "private": true,
-    "description": "Traçar rota utilizando Google Maps",
-    "keywords": ["mapa", "rota", "google-maps"],
-    "main": [
-        "./dist/google-maps-routes.js"
-    ],
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "test",
-        "tests"
-    ],
-    "authors": [
-        "Daniel Fernando Lourusso <dflourusso@gmail.com>"
-    ]
+  "name": "gmaps-waypoints",
+  "version": "0.1.0",
+  "license": "public",
+  "homepage": "http://www.paliari.com.br/",
+  "private": true,
+  "description": "Traçar rota utilizando Google Maps",
+  "keywords": [
+    "mapa",
+    "rota",
+    "google-maps"
+  ],
+  "main": [
+    "./dist/google-maps-routes.js"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "authors": [
+    "Daniel Fernando Lourusso <dflourusso@gmail.com>"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1"
+  }
 }
