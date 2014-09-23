@@ -1,2 +1,2 @@
 #!/bin/sh
-coffee -cj dist/google-maps-routes.js -b -w src/coffee/
+coffee -cj dist/gmaps-waypoints.js -b -w src/coffee/

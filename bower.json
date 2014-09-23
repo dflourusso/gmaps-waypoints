@@ -11,7 +11,7 @@
     "google-maps"
   ],
   "main": [
-    "./dist/google-maps-routes.js"
+    "./dist/gmaps-waypoints.js"
   ],
   "ignore": [
     "**/.*",

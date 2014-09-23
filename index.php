@@ -14,6 +14,6 @@
 </div>
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="dist/google-maps-routes.js"></script>
+<script src="dist/gmaps-waypoints.js"></script>
 </body>
 </html>

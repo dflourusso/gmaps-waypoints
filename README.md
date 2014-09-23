@@ -20,7 +20,7 @@ Inclua em seu index o **jquery**
 	
 Inclua em seu index o componente **gmaps-waypoints**
 
-	<script src="bower_components/gmaps-waypoints/dist/google-maps-routes.js"></script>
+	<script src="bower_components/gmaps-waypoints/dist/gmaps-waypoints.js"></script>
 	
 #### Drawing the Map
 
