@@ -1,7 +1,7 @@
-<div id="map-canvas" style="float:left;width:70%;height:100%;"></div>
-<div id="control_panel" style="float:right;width:30%;text-align:left;padding-top:20px; padding-left: 20px;">
-    <button class="btn btn-primary" type="button"
-            onclick="calcRoute(
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <button class="btn btn-primary pull-right" type="button"
+                onclick="calcRoute(
                 -23.426868,
                 -51.9408231,
                 [
@@ -12,6 +12,11 @@
                 ]
             );
             ">
-        Desenhar Rota
-    </button>
+            Desenhar Rota
+        </button>
+        <h4>Demonstração do plugin</h4>
+    </div>
+    <div style="height: 800px;">
+        <div id="map-canvas"></div>
+    </div>
 </div>

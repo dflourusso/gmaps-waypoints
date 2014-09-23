@@ -10,7 +10,9 @@
 </head>
 <body>
 
-<? include_once 'example/index.php' ?>
+<div class="container" style="margin-top: 20px;">
+    <? include_once 'example/index.php' ?>
+</div>
 
 <script src="dist/google-maps-routes.js"></script>
 </body>
