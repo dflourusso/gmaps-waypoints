@@ -1,14 +1,14 @@
-# Traçar Rotas com Google Maps => gmaps-waypoints
+### Traçar Rotas com Google Maps => gmaps-waypoints
 
 
 Google Maps com rotas exibindo múltiplos pontos
 
 
-## Instalação - Using Bower
+#### Instalação - Using Bower
     bower install dflourusso/gmaps-waypoints
 
 
-## Get Started
+#### Get Started
 
 Inclua em seu index o plugin do google para o mapa
 
@@ -22,15 +22,15 @@ Inclua em seu index o componente **gmaps-waypoints**
 
 	<script src="bower_components/gmaps-waypoints/dist/google-maps-routes.js"></script>
 	
-## Drawing the Map
+#### Drawing the Map
 
-### 1 Inclua uma div contendo id="map-canvas"
+##### 1 Inclua uma div contendo id="map-canvas"
 
 	<div id="map-canvas"></div>
 	
 Obs: *É necessário que esta div esteja dentro de outro elemento com **height** e **width** especificados*
 
-### 1 Inclua um botão ou link que invoke a função <u>calcRoute</u>
+##### 2 Inclua um botão ou link que invoke a função <u>calcRoute</u>
 A função espera como parâmetros a **latitude** atual, a **longitude** atual e um **array** contendo as coordenadas para traçar a rota. As posições do array de coordenadas podem ser o **nome da rua** ou um objeto contendo a **latitude e longitude**.
 
 Exemplo:
@@ -49,4 +49,4 @@ Exemplo:
         </button>
      
 
-## Acesse este [link](http://jsbin.com/kijoju/2/edit) para um exemplo em funcionamento
+#### Acesse este [link](http://jsbin.com/kijoju/2/edit) para um exemplo em funcionamento
