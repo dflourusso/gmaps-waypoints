@@ -14,26 +14,22 @@ initialize = function() {
     center: maringa
   };
   map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-  directionsDisplay.setMap(map);
-  return this;
+  return directionsDisplay.setMap(map);
 };
 
-calcRoute = function(currentLat, currentLong) {
-  var checkboxArray, i, request, waypts;
+calcRoute = function(currentLat, currentLong, locations) {
+  var i, item, request, unknowitem, waypts;
   waypts = [];
-  checkboxArray = document.getElementById("waypoints");
   i = 0;
-  while (i < checkboxArray.length) {
-    if (checkboxArray.options[i].selected === true) {
-      console.log(checkboxArray[i].value);
-      waypts.push({
-        location: checkboxArray[i].value,
-        stopover: true
-      });
-    }
+  while (i < locations.length) {
+    unknowitem = locations[i];
+    item = (typeof unknowitem === 'string' ? unknowitem : "" + unknowitem.latitude + ", " + unknowitem.longitude);
+    waypts.push({
+      location: item,
+      stopover: true
+    });
     i++;
   }
-  console.log(waypts);
   request = {
     origin: new google.maps.LatLng(currentLat, currentLong),
     destination: new google.maps.LatLng(-23.424239, -51.9398931),

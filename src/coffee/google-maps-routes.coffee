@@ -10,21 +10,18 @@ initialize = ->
 
   map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions)
   directionsDisplay.setMap map
-  @
 
-calcRoute = (currentLat, currentLong) ->
+calcRoute = (currentLat, currentLong, locations) ->
   waypts = []
-  checkboxArray = document.getElementById("waypoints")
   i = 0
 
-  while i < checkboxArray.length
-    if checkboxArray.options[i].selected is true
-      console.log checkboxArray[i].value
-      waypts.push
-        location: checkboxArray[i].value
-        stopover: true
+  while i < locations.length
+    unknowitem = locations[i]
+    item = (if typeof unknowitem is 'string' then unknowitem else ("#{unknowitem.latitude}, #{unknowitem.longitude}"))
+    waypts.push
+      location: item
+      stopover: true
     i++
-  console.log waypts
 
   request =
     origin: new google.maps.LatLng(currentLat, currentLong)
