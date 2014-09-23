@@ -2,6 +2,7 @@ directionsDisplay = null
 directionsService = new google.maps.DirectionsService()
 
 initialize = ->
+  $("head").append "<style type=\"text/css\"> #map-canvas { width: 100%; height: 100%; }</style>"
   directionsDisplay = new google.maps.DirectionsRenderer()
   maringa = new google.maps.LatLng(-23.426868, -51.9408231)
   mapOptions =
