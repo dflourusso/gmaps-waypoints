@@ -40,14 +40,12 @@ GmapsWaypoints = (function() {
   };
 
   GmapsWaypoints.prototype.calcRoute = function(origin, locations, destination) {
-    var i, item, request, unknowitem, waypts;
+    var i, request, waypts;
     waypts = [];
     i = 0;
     while (i < locations.length) {
-      unknowitem = locations[i];
-      item = (typeof unknowitem === 'string' ? unknowitem : "" + unknowitem.latitude + ", " + unknowitem.longitude);
       waypts.push({
-        location: item,
+        location: this.prepareLocation(locations[i]),
         stopover: true
       });
       i++;
@@ -66,6 +64,14 @@ GmapsWaypoints = (function() {
         }
       };
     })(this));
+  };
+
+  GmapsWaypoints.prototype.prepareLocation = function(loc) {
+    if (typeof loc === 'string') {
+      return loc;
+    } else {
+      return "" + loc.latitude + ", " + loc.longitude;
+    }
   };
 
   return GmapsWaypoints;

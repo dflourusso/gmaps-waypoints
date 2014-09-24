@@ -25,10 +25,8 @@ class GmapsWaypoints
     waypts = []
     i = 0
     while i < locations.length
-      unknowitem = locations[i]
-      item = (if typeof unknowitem is 'string' then unknowitem else ("#{unknowitem.latitude}, #{unknowitem.longitude}"))
       waypts.push
-        location: item
+        location: @prepareLocation locations[i]
         stopover: true
       i++
     request =
@@ -39,3 +37,6 @@ class GmapsWaypoints
       travelMode: google.maps.TravelMode.DRIVING
     @directionsService.route request, (response, status) =>
       @directionsDisplay.setDirections response  if status is google.maps.DirectionsStatus.OK
+
+  prepareLocation: (loc)->
+    if typeof loc is 'string' then loc else ("#{loc.latitude}, #{loc.longitude}")
