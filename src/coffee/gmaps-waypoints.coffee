@@ -39,6 +39,3 @@ class GmapsWaypoints
       travelMode: google.maps.TravelMode.DRIVING
     @directionsService.route request, (response, status) =>
       @directionsDisplay.setDirections response  if status is google.maps.DirectionsStatus.OK
-
-gm = new GmapsWaypoints document.getElementById('map-canvas'), {latitude: -23.426868, longitude: -51.9308231}
-google.maps.event.addDomListener window, "load", gm.initialize

@@ -36,5 +36,9 @@
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="dist/gmaps-waypoints.js"></script>
+<script type="text/javascript">
+    var gm = new GmapsWaypoints(document.getElementById('map-canvas'), {latitude: -23.426868, longitude: -51.9308231});
+    google.maps.event.addDomListener(window, "load", gm.initialize);
+</script>
 </body>
 </html>
