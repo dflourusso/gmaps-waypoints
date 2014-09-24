@@ -15,6 +15,7 @@ GmapsWaypoints = (function() {
     this.options = {
       latitude: -23.426868,
       longitude: -51.9408231,
+      travelMode: 'DRIVING',
       zoom: 13
     };
     for (k in options) {
@@ -55,7 +56,7 @@ GmapsWaypoints = (function() {
       destination: new google.maps.LatLng(destination.latitude, destination.longitude),
       waypoints: waypts,
       optimizeWaypoints: true,
-      travelMode: google.maps.TravelMode.DRIVING
+      travelMode: this.options.travelMode
     };
     return this.directionsService.route(request, (function(_this) {
       return function(response, status) {

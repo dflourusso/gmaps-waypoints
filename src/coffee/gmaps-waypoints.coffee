@@ -4,6 +4,7 @@ class GmapsWaypoints
     @options =
       latitude: -23.426868
       longitude: -51.9408231
+      travelMode: 'DRIVING'
       zoom: 13
     for k of options
       @options[k] = options[k]
@@ -34,7 +35,7 @@ class GmapsWaypoints
       destination: new google.maps.LatLng(destination.latitude, destination.longitude)
       waypoints: waypts
       optimizeWaypoints: true
-      travelMode: google.maps.TravelMode.DRIVING
+      travelMode: @options.travelMode
     @directionsService.route request, (response, status) =>
       @directionsDisplay.setDirections response  if status is google.maps.DirectionsStatus.OK
 
