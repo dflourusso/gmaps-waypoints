@@ -35,18 +35,37 @@ A função espera como parâmetros a **latitude** atual, a **longitude** atual e
 
 Exemplo:
 
-	<button type="button"  onclick="calcRoute(
-                -23.426868,
-                -51.9408231,
-                [
-                    'Rua Itamar Orlando Soares',
-                    {latitude: -23.428239, longitude: -51.9728931},
-                    'Av. Das Grevíleas',
-                    'Av. Pintassilgo'
-                ]
-            );">
-            Exibir Rota
-        </button>
+	<button type="button" onclick="
+				gm.calcRoute(
+                							{latitude: -23.426868, longitude: -51.9308231},
+                							[
+						                   	'Rua Itamar Orlando Soares',
+                    							{latitude: -23.428239, longitude: -51.9728931},
+                    							'Av. Das Grevíleas',
+                    							'Av. Pintassilgo'
+                							],
+                							{latitude: -23.426868, longitude: -51.9408231}
+            						   );
+            					">
+                Exibir Rota
+            </button>
      
+##### 3 Adicione o javascript abaixo passando os parâmetros desejados para instanciar a classe
 
-#### Acesse este [link](http://jsbin.com/kijoju/2/edit) para um exemplo em funcionamento
+Ao instanciar a classe **GmapsWaypoints** é necessário que se passe dois parâmetros, um contendo o **objeto** onde o mapa será desenhado e outro com as **opções de configuração** para o mapa.
+
+Opções disponíveis:
+
+* latitude: *Latitude utilizada para centralizar o mapa em sua primeira exibição*
+* longitude: *Longitude utilizada para centralizar o mapa em sua primeira exibição*
+* zoom: *Zoom utilizado para a exibição inicial do mapa*
+* travelMode: *Utilizado para indicar o modo como se irá percorrer a rota. [Detalhes](https://developers.google.com/maps/documentation/javascript/directions?hl=pt-br#TravelModes)*
+
+Exemplo:
+	
+	<script type="text/javascript">
+    		var gm = new GmapsWaypoints(document.getElementById('map-canvas'), {latitude: -23.426868, longitude: -51.9308231, zoom: 13, travelMode: 'DRIVING'});
+    		google.maps.event.addDomListener(window, "load", gm.initialize);
+	</script>
+
+##### Acesse este [link](http://jsbin.com/kijoju/2/edit) para um exemplo em funcionamento

@@ -1,37 +1,43 @@
-directionsDisplay = null
-directionsService = new google.maps.DirectionsService()
+class GmapsWaypoints
+  constructor: (@element, options = {})->
+    @directionsService = new google.maps.DirectionsService()
+    @options =
+      latitude: -23.426868
+      longitude: -51.9408231
+      travelMode: 'DRIVING'
+      zoom: 13
+    for k of options
+      @options[k] = options[k]
 
-initialize = ->
-  $("head").append "<style type=\"text/css\"> #map-canvas { width: 100%; height: 100%; }</style>"
-  directionsDisplay = new google.maps.DirectionsRenderer()
-  maringa = new google.maps.LatLng(-23.426868, -51.9408231)
-  mapOptions =
-    zoom: 13
-    center: maringa
+  initialize: =>
+    @injectCssForMap()
+    @directionsDisplay = new google.maps.DirectionsRenderer()
+    centerMapLatLng = new google.maps.LatLng(@options.latitude, @options.longitude)
+    mapOptions =
+      zoom: @options.zoom
+      center: centerMapLatLng
+    map = new google.maps.Map(@element, mapOptions)
+    @directionsDisplay.setMap map
 
-  map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions)
-  directionsDisplay.setMap map
+  injectCssForMap: ->
+    $(@element).css('width', '100%').css('height', '100%')
 
-calcRoute = (currentLat, currentLong, locations) ->
-  waypts = []
-  i = 0
+  calcRoute: (origin, locations, destination) =>
+    waypts = []
+    i = 0
+    while i < locations.length
+      waypts.push
+        location: @prepareLocation locations[i]
+        stopover: true
+      i++
+    request =
+      origin: new google.maps.LatLng(origin.latitude, origin.longitude)
+      destination: new google.maps.LatLng(destination.latitude, destination.longitude)
+      waypoints: waypts
+      optimizeWaypoints: true
+      travelMode: @options.travelMode
+    @directionsService.route request, (response, status) =>
+      @directionsDisplay.setDirections response  if status is google.maps.DirectionsStatus.OK
 
-  while i < locations.length
-    unknowitem = locations[i]
-    item = (if typeof unknowitem is 'string' then unknowitem else ("#{unknowitem.latitude}, #{unknowitem.longitude}"))
-    waypts.push
-      location: item
-      stopover: true
-    i++
-
-  request =
-    origin: new google.maps.LatLng(currentLat, currentLong)
-    destination: new google.maps.LatLng(-23.424239, -51.9398931)
-    waypoints: waypts
-    optimizeWaypoints: true
-    travelMode: google.maps.TravelMode.DRIVING
-
-  directionsService.route request, (response, status) ->
-    directionsDisplay.setDirections response  if status is google.maps.DirectionsStatus.OK
-
-google.maps.event.addDomListener window, "load", initialize
+  prepareLocation: (loc)->
+    if typeof loc is 'string' then loc else ("#{loc.latitude}, #{loc.longitude}")
