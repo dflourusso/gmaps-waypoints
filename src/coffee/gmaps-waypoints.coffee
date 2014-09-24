@@ -2,14 +2,17 @@ directionsDisplay = null
 directionsService = new google.maps.DirectionsService()
 
 initialize = ->
-  $("head").append "<style type=\"text/css\"> #map-canvas { width: 100%; height: 100%; }</style>"
+  element = document.getElementById('map-canvas')
+  $mapCanvas = $(element)
+  $mapCanvas.css('width', '100%')
+  $mapCanvas.css('height', '100%')
   directionsDisplay = new google.maps.DirectionsRenderer()
   maringa = new google.maps.LatLng(-23.426868, -51.9408231)
   mapOptions =
     zoom: 13
     center: maringa
 
-  map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions)
+  map = new google.maps.Map(element, mapOptions)
   directionsDisplay.setMap map
 
 calcRoute = (currentLat, currentLong, locations) ->
