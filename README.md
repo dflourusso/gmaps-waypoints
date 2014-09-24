@@ -68,4 +68,4 @@ Exemplo:
     		google.maps.event.addDomListener(window, "load", gm.initialize);
 	</script>
 
-##### Acesse este [link](http://jsbin.com/kijoju/2/edit) para um exemplo em funcionamento
+##### Acesse este [link](http://jsbin.com/pucon/1/edit) para um exemplo em funcionamento
