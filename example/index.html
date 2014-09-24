@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>Google Maps</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+</head>
+<body>
+
+<div class="container" style="margin-top: 20px;">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <button class="btn btn-primary pull-right" type="button"
+                    onclick="gm.calcRoute(
+                {latitude: -23.426868, longitude: -51.9308231},
+                [
+                    'Rua Itamar Orlando Soares',
+                    {latitude: -23.428239, longitude: -51.9728931},
+                    'Av. Das Grevíleas',
+                    'Av. Pintassilgo'
+                ],
+                {latitude: -23.426868, longitude: -51.9408231}
+            );
+            ">
+                Exibir Rota
+            </button>
+            <h4>Demonstração do plugin</h4>
+        </div>
+        <div style="height: 800px;">
+            <div id="map-canvas"></div>
+        </div>
+    </div>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="dist/gmaps-waypoints.js"></script>
+</body>
+</html>

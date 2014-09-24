@@ -35,18 +35,20 @@ A função espera como parâmetros a **latitude** atual, a **longitude** atual e
 
 Exemplo:
 
-	<button type="button"  onclick="calcRoute(
-                -23.426868,
-                -51.9408231,
-                [
-                    'Rua Itamar Orlando Soares',
-                    {latitude: -23.428239, longitude: -51.9728931},
-                    'Av. Das Grevíleas',
-                    'Av. Pintassilgo'
-                ]
-            );">
-            Exibir Rota
-        </button>
+	<button type="button" onclick="
+				gm.calcRoute(
+                							{latitude: -23.426868, longitude: -51.9308231},
+                							[
+						                   	'Rua Itamar Orlando Soares',
+                    							{latitude: -23.428239, longitude: -51.9728931},
+                    							'Av. Das Grevíleas',
+                    							'Av. Pintassilgo'
+                							],
+                							{latitude: -23.426868, longitude: -51.9408231}
+            						   );
+            					">
+                Exibir Rota
+            </button>
      
 
 #### Acesse este [link](http://jsbin.com/kijoju/2/edit) para um exemplo em funcionamento
