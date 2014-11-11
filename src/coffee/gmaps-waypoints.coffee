@@ -2,8 +2,8 @@ class GmapsWaypoints
   constructor: (@element, options = {})->
     @directionsService = new google.maps.DirectionsService()
     @options =
-      latitude: -23.426868
-      longitude: -51.9408231
+      latitude: -23.424227
+      longitude: -51.939256
       travelMode: 'DRIVING'
       zoom: 13
     for k of options
